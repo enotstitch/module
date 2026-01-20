@@ -16,7 +16,7 @@
 		"at-rule-empty-line-before": [
 			"always",
 			{
-				"ignoreAtRules": ["include", "use", "forward"]
+				"ignoreAtRules": ["include", "use", "forward", "media"]
 			}
 		],
 		"no-empty-source": null,
