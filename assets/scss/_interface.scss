@@ -92,7 +92,11 @@
 }
 
 .section {
-	padding-top: 50px;
+	padding-top: 30px;
+
+	&--pt-big {
+		padding-top: 50px;
+	}
 }
 
 .title {
@@ -104,7 +108,7 @@
 	@include adaptive-font(40, 16);
 
 	&--big {
-		font-size: 50px;
+		@include adaptive-font(50, 24);
 	}
 }
 
@@ -117,15 +121,10 @@
 		font-size: 14px;
 	}
 
-	&--lg {
-		font-size: 20px;
-	}
-
-	&--bold {
+	&--big {
 		font-weight: 500;
-	}
-
-	&--upper {
+		font-size: 20px;
+		line-height: 120%;
 		text-transform: uppercase;
 	}
 }
@@ -143,5 +142,10 @@
 
 	&--transparent {
 		background-color: transparent;
+		transition: background-color var(--time);
+
+		&:hover {
+			background-color: var(--accent-color);
+		}
 	}
 }

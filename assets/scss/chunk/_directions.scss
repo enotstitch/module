@@ -1,0 +1,96 @@
+.directions {
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+
+		@media (max-width: 1200px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__title {
+		margin-bottom: 86px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__decor-block {
+		grid-column: span 2;
+		background-image: url('@img/directions/decor-block.svg');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@media (max-width: 1200px) {
+			display: none;
+		}
+	}
+}
+
+.directions-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: var(--radius);
+	padding: 23px 28px;
+	box-shadow: 0 0 0 rgb(0 0 0 / 0%);
+	background-color: var(--light-bg-color);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	gap: 85px;
+
+	&__icon {
+		flex-shrink: 0;
+		width: 40px;
+		height: 40px;
+		background-position: left;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@media (max-width: 768px) {
+			width: 35px;
+			height: 35px;
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		right: 0;
+		top: 0;
+		border-radius: 0 0 0 50px;
+		width: 100%;
+		height: 100%;
+		max-width: 270px;
+		max-height: 100px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@media (max-width: 992px) {
+			height: 100%;
+			max-width: 224px;
+			max-height: 83px;
+		}
+	}
+
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		height: 100%;
+		max-width: 250px;
+	}
+
+	&:hover {
+		box-shadow: 0 12px 30px rgb(0 0 0 / 25%);
+		transform: translateY(-5px);
+	}
+}
