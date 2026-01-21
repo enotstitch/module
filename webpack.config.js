@@ -6,10 +6,10 @@ const isDev = !process.argv.includes('--build');
 export default {
 	entry: {
 		libs: './assets/js/libs.js',
-		main: './assets/js/scripts.js',
+		scripts: './assets/js/scripts.js',
 	},
 	output: {
-		filename: '[name].min.js', // libs.min.js и main.min.js
+		filename: '[name].min.js',
 		path: path.resolve('./build/js'),
 	},
 	mode: isDev ? 'development' : 'production',
