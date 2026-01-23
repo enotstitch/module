@@ -1,0 +1,84 @@
+.projects {
+	&__title {
+		margin-bottom: 80px;
+	}
+
+	&__wrap {
+		position: relative;
+		margin-bottom: 20px;
+		padding: 0 150px;
+		padding-bottom: 50px;
+
+		@media (max-width: 992px) {
+			padding: 0;
+			padding-bottom: 50px;
+		}
+	}
+
+	&-slider {
+		.swiper-slide {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			min-height: 105px;
+
+			@media (max-width: 768px) {
+				justify-content: flex-start;
+				min-height: 70px;
+			}
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			z-index: 1;
+		}
+	}
+
+	&__nav {
+		top: 23% !important;
+		width: fit-content;
+		height: 30px;
+		color: var(--light-color);
+	}
+
+	&__link {
+		@media (max-width: 576px) {
+			display: none;
+		}
+	}
+}
+
+.projects-card {
+	max-width: 260px;
+
+	&__img {
+		display: flex;
+		overflow: hidden;
+		margin-bottom: 35px;
+		border-radius: var(--radius);
+		height: 205px;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__title {
+		margin-bottom: 18px;
+	}
+
+	&__link {
+		@media (max-width: 768px) {
+			width: 100%;
+			max-width: 100%;
+			box-sizing: border-box;
+		}
+	}
+
+	@media (max-width: 768px) {
+		max-width: 100%;
+	}
+}
