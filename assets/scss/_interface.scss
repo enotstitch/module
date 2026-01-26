@@ -97,6 +97,12 @@
 	&--pt-big {
 		padding-top: 50px;
 	}
+
+	&--mobile-none {
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
 }
 
 .title {
@@ -154,6 +160,40 @@
 
 		&:hover {
 			background-color: var(--accent-color);
+		}
+	}
+}
+
+.breadcrumbs {
+	&__link {
+		position: relative;
+		padding-right: 10px;
+		font-size: 14px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		color: var(--accent-color);
+
+		&::after {
+			content: ' /';
+			position: absolute;
+			right: 0;
+			font-size: 12px;
+			color: var(--light-color);
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:last-child {
+			text-decoration: none;
+			color: var(--light-color);
+			cursor: default;
+			user-select: none;
+
+			&::after {
+				content: none;
+			}
 		}
 	}
 }

@@ -6,3 +6,4 @@ initHeader();
 initSliders();
 
 new Spollers('questions-spollers');
+new Spollers('vacancies-spollers');

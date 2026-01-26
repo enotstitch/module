@@ -1,7 +1,11 @@
 export class Spollers {
 	constructor(wrapClass, multiOpen = false) {
 		this.spollersWrap = document.querySelector(`.${wrapClass}`);
+		if (!this.spollersWrap) return;
+
 		this.spollers = this.spollersWrap.querySelectorAll('.spoller');
+		if (!this.spollers.length) return;
+
 		this.activeSpollers = this.spollersWrap.querySelectorAll('.spoller[open]');
 		this.multiOpen = multiOpen == 'multiOpen' ? true : false;
 		this.events();
