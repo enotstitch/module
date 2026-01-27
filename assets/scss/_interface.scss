@@ -133,6 +133,13 @@
 		line-height: 120%;
 		text-transform: uppercase;
 	}
+
+	&--bold {
+		font-family: var(--font-second);
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 100%;
+	}
 }
 
 .link {
@@ -163,6 +170,24 @@
 		}
 	}
 }
+
+
+.socials {
+	display: flex;
+	gap: 20px;
+
+	&__item {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		transition: opacity var(--time);
+
+		&:hover {
+			opacity: 0.8;
+    }
 
 .breadcrumbs {
 	&__link {
