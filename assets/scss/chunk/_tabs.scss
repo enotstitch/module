@@ -1,0 +1,39 @@
+@use 'mixins/adaptive-font' as *;
+
+.tabs {
+	width: 100%;
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&-item {
+			margin: 0 25px;
+			cursor: pointer;
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 50px;
+		line-height: 100%;
+		@include adaptive-font(20, 40);
+
+		&-item {
+			animation: fade-in 0.5s;
+		}
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

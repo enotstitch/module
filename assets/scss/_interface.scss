@@ -162,6 +162,10 @@
 			background-color: var(--accent-color);
 		}
 	}
+
+	&--semibold {
+		font-weight: 600;
+	}
 }
 
 .breadcrumbs {
