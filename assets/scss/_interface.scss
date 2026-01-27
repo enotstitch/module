@@ -171,7 +171,6 @@
 	}
 }
 
-
 .socials {
 	display: flex;
 	gap: 20px;
@@ -187,7 +186,9 @@
 
 		&:hover {
 			opacity: 0.8;
-    }
+		}
+	}
+}
 
 .breadcrumbs {
 	&__link {
