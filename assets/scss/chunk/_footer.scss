@@ -17,7 +17,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 40px;
+		gap: 43px;
 		max-width: 355px;
 
 		&--wide {
@@ -26,15 +26,25 @@
 		}
 	}
 
-	&__logo {
+	&__logo.logo {
 		gap: 15px;
+
+		.logo__text {
+			font-size: 11px;
+		}
+
+		.logo__text::before {
+			width: 2px;
+			height: 25px;
+		}
 	}
 
 	&__contacts {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 40px 50px;
+		padding-top: 15px;
 		height: fit-content;
+		gap: 40px 50px;
 	}
 
 	&__decor-block {
