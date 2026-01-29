@@ -1,6 +1,7 @@
 import { Swiper, Navigation, Pagination } from '../libs.js';
 
 let newsSlider;
+let applicationSlider;
 
 export function initSliders() {
 	new Swiper('.partners-slider', {
@@ -130,5 +131,60 @@ export function initSliders() {
 	if (window.innerWidth > 1400 && newsSlider) {
 		newsSlider.destroy(true, true);
 		newsSlider = null;
+	}
+
+	if (window.innerWidth <= 1400 && !applicationSlider) {
+		applicationSlider = new Swiper('.application-slider', {
+			modules: [Navigation, Pagination],
+			slidesPerView: 3,
+			spaceBetween: 20,
+			navigation: {
+				nextEl: '.application__nav--next',
+				prevEl: '.application__nav--prev',
+			},
+			pagination: {
+				el: '.application__pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+					pagination: {
+						el: '.application__pagination',
+						clickable: true,
+					},
+					navigation: false,
+				},
+				769: {
+					slidesPerView: 2,
+					pagination: {
+						el: '.application__pagination',
+						clickable: true,
+					},
+					navigation: false,
+				},
+				992: {
+					slidesPerView: 2,
+					pagination: false,
+					navigation: {
+						nextEl: '.application__nav--next',
+						prevEl: '.application__nav--prev',
+					},
+				},
+				1200: {
+					slidesPerView: 3,
+					pagination: false,
+					navigation: {
+						nextEl: '.application__nav--next',
+						prevEl: '.application__nav--prev',
+					},
+				},
+			},
+		});
+	}
+
+	if (window.innerWidth > 1400 && applicationSlider) {
+		applicationSlider.destroy(true, true);
+		applicationSlider = null;
 	}
 }

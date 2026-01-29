@@ -1,6 +1,20 @@
 .application {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 40px;
+
+	&__cards {
+		position: relative;
+
+		@media (max-width: 1400px) {
+			padding: 0 55px;
+		}
+
+		@media (max-width: 992px) {
+			padding: 0;
+			padding-bottom: 50px;
+		}
+	}
 
 	&__decor-block {
 		justify-self: end;
@@ -15,12 +29,53 @@
 			display: none;
 		}
 	}
-}
 
-.application-cards {
-	display: grid;
-	gap: 40px;
-	grid-template-columns: repeat(3, 1fr);
+	&-slider {
+		.swiper-slide {
+			display: flex;
+			justify-content: center;
+			box-sizing: border-box;
+
+			&:last-child {
+				@media (max-width: 1400px) {
+					display: none;
+				}
+			}
+		}
+
+		@media (min-width: 1401px) {
+			.swiper-wrapper {
+				display: grid;
+				gap: 40px;
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			.swiper-slide {
+				&:last-child {
+					display: flex;
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+
+	&__pagination {
+		display: none;
+
+		@media (max-width: 992px) {
+			display: block;
+		}
+	}
+
+	&__nav {
+		width: fit-content;
+		height: 30px;
+		color: var(--light-color);
+
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
 }
 
 .application-card {
@@ -32,11 +87,20 @@
 		overflow: hidden;
 		border-radius: 20px;
 		height: 220px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__descr {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+	}
+
+	@media (max-width: 1400px) {
+		max-width: 360px;
 	}
 }

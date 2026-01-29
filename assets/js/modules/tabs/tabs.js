@@ -3,6 +3,10 @@ export function tabs(headerSelector, tabSelector, contentSelector, activeClass, 
 		tab = document.querySelectorAll(tabSelector),
 		content = document.querySelectorAll(contentSelector);
 
+	if (!header || !tab || !content) {
+		return;
+	}
+
 	function hideTabContent() {
 		content.forEach((item) => {
 			item.style.display = 'none';
